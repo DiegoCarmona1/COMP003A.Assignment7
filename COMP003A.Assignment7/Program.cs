@@ -61,11 +61,13 @@ namespace COMP003.Assignment7
             string[] arrayWord = new string[word.Length];
            for (int i = 0; i < arrayWord.Length; i++)
             {
+                
                 if (arrayWord[i] == charInput)
                 {
                     count++;
                 }
             }
+           return count;
         }
 
         /// <summary>
@@ -77,16 +79,11 @@ namespace COMP003.Assignment7
         {
             word = word.ToLower();
             string[] arrayWord = word.Split(' ');
-            for (int i = arrayWord.Length - 1; i >= 0; i--)
+            Array.Reverse(arrayWord);
+            string compareString = Convert.ToString(arrayWord);
+            if (word == compareString)
             {
-                string reversedWord = arrayWord[i];
-                if (reversedWord == word)
-                {
-                    return true;
-                } else
-                {
-                    return false;
-                }
+                return true;
             }
             return false;
         }
