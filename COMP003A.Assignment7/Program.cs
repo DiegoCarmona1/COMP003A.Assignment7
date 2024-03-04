@@ -4,6 +4,8 @@
  * Purpose: To gain understanding and practice with arrays, lists, and other data structrures and their manipulation
  */
 
+using System.ComponentModel;
+
 namespace COMP003.Assignment7
 {
     internal class Program
@@ -76,13 +78,13 @@ namespace COMP003.Assignment7
         static bool IsPalindrome(string word)
         {
             word = word.ToLower();
-            char[] arrayWord = word.ToCharArray();
-            Array.Reverse(arrayWord);
-            string compareString = Convert.ToString(arrayWord);
-            if (word == compareString)
+            char[] chars = word.ToCharArray();
+            Array.Reverse(chars);
+            string reverseArray = new string(chars);
+            if (reverseArray == word)
             {
                 return true;
-            }else
+            } else
             {
                 return false;
             }
