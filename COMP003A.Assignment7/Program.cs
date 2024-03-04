@@ -57,12 +57,10 @@ namespace COMP003.Assignment7
             int count = 0;
             characterInput = char.ToLower(characterInput);
             word = word.ToLower();
-            string charInput = Convert.ToString(characterInput);
-            string[] arrayWord = { word };
+            char[] arrayWord = word.ToCharArray();
            for (int i = 0; i < arrayWord.Length; i++)
             {
-                
-                if (arrayWord[i] == charInput)
+                if (arrayWord[i] == characterInput)
                 {
                     count++;
                 }
@@ -78,14 +76,16 @@ namespace COMP003.Assignment7
         static bool IsPalindrome(string word)
         {
             word = word.ToLower();
-            string[] arrayWord = { word };
+            char[] arrayWord = word.ToCharArray();
             Array.Reverse(arrayWord);
             string compareString = Convert.ToString(arrayWord);
             if (word == compareString)
             {
                 return true;
+            }else
+            {
+                return false;
             }
-            return false;
         }
 
         /// <summary>
